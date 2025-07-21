@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Log In{% endblock %}
+{% block content %}
+  {% with messages = get_flashed_messages() %}
+    {% for msg in messages %}
+      <div class="flash-message">{{ msg }}</div>
+    {% endfor %}
+  {% endwith %}
+  <br>
+    
+    <div class="glass-card p-4 mx-auto" style="max-width: 400px;">
+      <!-- Login or Predict form -->
+       <h1>Log in to Your Account</h1>
+       <form class="login-form" action="/login" method="post">
+      <div class="form-row">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-row">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="form-row submit-row">
+        <input type="submit" value="Log In">
+      </div>
+    </form>
+
+  </div>
+{% endblock %}
+
+
